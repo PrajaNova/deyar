@@ -35,21 +35,38 @@ export const ContactSection: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
     
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
+
+      if (response.ok) {
+        setFormSuccess(true);
+        setFormState({ name: '', email: '', message: '' });
+        
+        // Auto close success box
+        setTimeout(() => {
+          setFormSuccess(false);
+        }, 5000);
+      } else {
+        const data = await response.json();
+        alert(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again later.');
+    } finally {
       setLoading(false);
-      setFormSuccess(true);
-      setFormState({ name: '', email: '', message: '' });
-      
-      // Auto close success box
-      setTimeout(() => {
-        setFormSuccess(false);
-      }, 5000);
-    }, 1200);
+    }
   };
 
   return (
@@ -126,9 +143,12 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-display text-xs uppercase tracking-widest font-semibold text-brand-espresso">Send a letter</h4>
-                    <p className="font-sans text-xs md:text-sm text-brand-espresso/80 mt-1 font-light">
-                      hearth@deyarcafe.com
-                    </p>
+                    <a 
+                      href="mailto:Cafedeyar@gmail.com" 
+                      className="font-sans text-xs md:text-sm text-brand-espresso/80 hover:text-brand-rust transition-colors mt-1 font-light block"
+                    >
+                      Cafedeyar@gmail.com
+                    </a>
                   </div>
                 </div>
 
