@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           <p className="font-sans text-base md:text-xl text-brand-cream/90 max-w-2xl font-light leading-relaxed mb-10">
-            Deyar is a cozy, artisanal refuge rooted in Shimla’s pristine Deodar forest folklore. Crafting high-altitude beans, heritage wild-botanical infusions, and traditional wood-smoked delicacies.
+            Deyar is a cozy, artisanal refuge rooted in Bir Billing’s pristine Deodar forest folklore. Crafting high-altitude beans, heritage wild-botanical infusions, and traditional wood-smoked delicacies.
           </p>
 
           {/* Core App Direction Flows */}

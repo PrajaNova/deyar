@@ -111,6 +111,16 @@ export const Footer: React.FC = () => {
         <div className="pt-8 border-t border-brand-cream/5 flex flex-col sm:flex-row justify-between text-[10px] font-display uppercase tracking-widest text-brand-cream/40 text-center sm:text-left gap-4">
           <div>
             © 2026 DEYAR CAFE • ALL LORE RESERVED.
+            <span className="mx-2">•</span>
+            Developed by{' '}
+            <a 
+              href="https://www.prajanova.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-brand-gold hover:underline transition-all"
+            >
+              PrajaNova
+            </a>
           </div>
           <div className="flex gap-4 justify-center">
             <span className="flex items-center gap-1.5"><Leaf className="w-3 h-3 text-brand-pine" /> Himachal Wild honey</span>
