@@ -191,16 +191,17 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const CAFE_HOURS = [
-  { day: 'Monday - Friday', time: '7:30 AM - 8:00 PM' },
-  { day: 'Saturday - Sunday', time: '8:30 AM - 9:30 PM' }
+  { day: 'Monday - Tuesday', time: '9:30 AM - 9:30 PM' },
+  { day: 'Wednesday', time: 'Closed' },
+  { day: 'Thursday - Sunday', time: '9:30 AM - 9:30 PM' }
 ];
 
 export const CAFE_STORY = {
-  tagline: 'Grown in Himalayan Forest Storieâ€”Smoked in Woodfireâ€\u009d',
+  tagline: 'Grown in Himalayan Forest Stories—Smoked in Woodfire',
   story_title: 'The Legend of the Himalayan Bear & the Deodar Forest',
   paragraphs: [
-    'In the serene heights of Himachal, mountain folk tell of the Himalayan Bearâ€”the ancient guardian of the deodar pine forests. In Himachal folklore, the bear is the protector of the wild woods, leading tired hikers and trekkers safely through silent snowy slopes and guiding them toward hidden, sunlit glades filled with wild berries and mountain herbs.',
-    'Itâ€™s said that whenever the bear is happy, it balances a small fallen pinecone on its nose, looking up towards the mountain sky in pure gratitude. This playful yet protective spirit represents resilience, deep connection to nature, and the joy of simple forest treasures.',
+    'In the serene heights of Himachal, mountain folk tell of the Himalayan Bear—the ancient guardian of the deodar pine forests. In Himachal folklore, the bear is the protector of the wild woods, leading tired hikers and trekkers safely through silent snowy slopes and guiding them toward hidden, sunlit glades filled with wild berries and mountain herbs.',
+    'It’s said that whenever the bear is happy, it balances a small fallen pinecone on its nose, looking up towards the mountain sky in pure gratitude. This playful yet protective spirit represents resilience, deep connection to nature, and the joy of simple forest treasures.',
     'Deyar Café was founded to share this warmth. Rooted in traditional Himachali storytelling, local natural ingredients, and a slow, cozy lifestyle, we preserve age-old recipes through modern coffee craftsmanship. Every bag of single-origin beans supports community farms in the high valleys, while our honey is ethically gathered by wild bee-keepers who share our devotion to protecting our surrounding forests.',
     'Pull up a wooden bench, take in the rich aroma of pinecone-sage smoke, and find your sanctuary.'
   ]

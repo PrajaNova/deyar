@@ -3,7 +3,7 @@ import { ContactSection } from '../../components/ContactSection';
 
 export const metadata: Metadata = {
   title: 'Visit the Hearth Space - Deyar Cafe',
-  description: 'Operating hours, coordinates, hiking trail maps, and contacts for Deyar Cafe in the Shimla Range, Himachal Pradesh.',
+  description: 'Operating hours, coordinates, hiking trail maps, and contacts for Deyar Cafe in Bir Billing, Himachal Pradesh.',
 };
 
 export default function ContactPage() {

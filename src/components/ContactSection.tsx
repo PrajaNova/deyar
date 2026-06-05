@@ -14,17 +14,20 @@ export const ContactSection: React.FC = () => {
   const [isOpenNow, setIsOpenNow] = useState(true);
 
   useEffect(() => {
-    // Basic dynamic open-state selector based on system local time (generally between 7:30 AM and 9:30 PM)
+    // Dynamic open-status based on 9:30 AM - 9:30 PM (Wednesday Closed)
     const checkOpenStatus = () => {
       const now = new Date();
+      const day = now.getDay(); // 0 = Sunday, 3 = Wednesday
       const hrs = now.getHours();
       const mins = now.getMinutes();
       const totalMins = hrs * 60 + mins;
       
-      const openMin = 7 * 60 + 30; // 7:30 AM
+      const openMin = 9 * 60 + 30; // 9:30 AM
       const closeMin = 21 * 60 + 30; // 9:30 PM
       
-      if (totalMins >= openMin && totalMins <= closeMin) {
+      if (day === 3) {
+        setIsOpenNow(false); // Closed on Wednesday
+      } else if (totalMins >= openMin && totalMins <= closeMin) {
         setIsOpenNow(true);
       } else {
         setIsOpenNow(false);
@@ -87,7 +90,7 @@ export const ContactSection: React.FC = () => {
             <span className="font-display text-[10px] uppercase tracking-widest font-semibold">
               {isOpenNow ? 'Deyar Hearth: Open Now' : 'Deyar Hearth: Closed Now'}
             </span>
-            <span className="text-brand-cocoa font-sans text-[10px] pl-1 font-light">• 7:30 AM - 9:30 PM</span>
+            <span className="text-brand-cocoa font-sans text-[10px] pl-1 font-light">• 9:30 AM - 9:30 PM (Wed Closed)</span>
           </div>
         </div>
 
@@ -110,11 +113,11 @@ export const ContactSection: React.FC = () => {
                   <div>
                     <h4 className="font-display text-xs uppercase tracking-widest font-semibold text-brand-espresso">Our physical Sanctuary</h4>
                     <p className="font-sans text-xs md:text-sm text-brand-espresso/80 mt-1 font-light">
-                      Valley Ridge Trail, Junction 4. <br />
-                      Shimla Range, Himachal Pradesh 171001
+                      Near The Hosteller, Bir, <br />
+                      Billing, Himachal Pradesh 176077
                     </p>
                     <a 
-                      href="https://maps.google.com/?q=Shimla+Himachal+Pradesh" 
+                      href="https://www.google.com/maps/place/2PP8%2BCQQ,+near+Happy+Home+Stay,+Bir,+Biling,+Himachal+Pradesh+176077/@32.0358603,76.7157645,19z/data=!4m9!1m2!2m1!1sThe+Hosteller!3m5!1s0x3904b8b8cf568e59:0xf6145bfe95ab314e!8m2!3d32.0361677!4d76.7170123!16s%2Fg%2F11gr7h76tf?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="inline-flex items-center gap-1.5 text-brand-rust hover:text-brand-espresso font-display text-[10px] uppercase font-semibold mt-2 tracking-wider transition-colors"
@@ -274,7 +277,7 @@ export const ContactSection: React.FC = () => {
             </div>
             
             <div className="text-2xs font-mono text-brand-cocoa bg-brand-cream-light px-3 py-1 rounded-sm border border-brand-cocoa/20">
-              COORDS: 31.1048° N, 77.1734° E • ALTITUDE: 2200M
+              COORDS: 32.0362° N, 76.7170° E • ALTITUDE: 1525M
             </div>
           </div>
 
@@ -297,8 +300,8 @@ export const ContactSection: React.FC = () => {
 
               {/* Mountains labels */}
               <text x="220" y="80" fill="#845D4B" className="font-display font-medium text-[8px] uppercase tracking-wider" opacity="0.6">CONIFEROUS FOREST BOUNDARY</text>
-              <text x="500" y="320" fill="#845D4B" className="font-display font-medium text-[8px] uppercase tracking-wider" opacity="0.6">SHIMLA MALL ROAD TRAIL CONNECTOR (15 MIN)</text>
-              <text x="50" y="270" fill="#1E3F2E" className="font-display font-medium text-[8px] uppercase tracking-widest" opacity="0.6">▼ KOTGARH PINECREST PATH</text>
+              <text x="500" y="320" fill="#845D4B" className="font-display font-medium text-[8px] uppercase tracking-wider" opacity="0.6">BIR PARAGLIDING LANDING SITE (5 MIN)</text>
+              <text x="50" y="270" fill="#1E3F2E" className="font-display font-medium text-[8px] uppercase tracking-widest" opacity="0.6">▼ BILLING HIKING PATH</text>
             </svg>
 
             {/* Simulated interactive map markers */}

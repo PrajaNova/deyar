@@ -13,7 +13,7 @@ export const AboutSection: React.FC = () => {
     {
       icon: <Leaf className="w-6 h-6 text-brand-pine" />,
       title: "Deodar Forest Stewardship",
-      desc: "Our menu uses responsibly harvested wild sage, cedar honey, and meadow botanicals, dedicating 5% of proceeds directly to community re-forestry in Shimla."
+      desc: "Our menu uses responsibly harvested wild sage, cedar honey, and meadow botanicals, dedicating 5% of proceeds directly to community re-forestry in Bir Billing."
     },
     {
       icon: <Heart className="w-6 h-6 text-brand-gold" />,
@@ -109,11 +109,11 @@ export const AboutSection: React.FC = () => {
             <div className="space-y-3 pt-2 text-xs font-display text-brand-cream/70 uppercase tracking-widest">
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-brand-gold shrink-0" />
-                <span>Valley Ridge Trail, Junction 4. Shimla, Himachal</span>
+                <span>Near The Hosteller, Bir, Billing, Himachal Pradesh 176077</span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-brand-gold shrink-0" />
-                <span>Open Everyday: {CAFE_HOURS[0].time}</span>
+                <span>Mon - Sun: 9:30 AM - 9:30 PM (Wed Closed)</span>
               </div>
             </div>
           </div>
