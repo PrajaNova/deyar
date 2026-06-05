@@ -113,7 +113,7 @@ export const AboutSection: React.FC = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-brand-gold shrink-0" />
-                <span>Open Everyday: {CAFE_HOURS[0].time}</span>
+                <span>Mon - Sun: 9:30 AM - 9:30 PM (Wed Closed)</span>
               </div>
             </div>
           </div>

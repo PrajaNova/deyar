@@ -191,8 +191,9 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const CAFE_HOURS = [
-  { day: 'Monday - Friday', time: '7:30 AM - 8:00 PM' },
-  { day: 'Saturday - Sunday', time: '8:30 AM - 9:30 PM' }
+  { day: 'Monday - Tuesday', time: '9:30 AM - 9:30 PM' },
+  { day: 'Wednesday', time: 'Closed' },
+  { day: 'Thursday - Sunday', time: '9:30 AM - 9:30 PM' }
 ];
 
 export const CAFE_STORY = {

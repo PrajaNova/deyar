@@ -14,17 +14,20 @@ export const ContactSection: React.FC = () => {
   const [isOpenNow, setIsOpenNow] = useState(true);
 
   useEffect(() => {
-    // Basic dynamic open-state selector based on system local time (generally between 7:30 AM and 9:30 PM)
+    // Dynamic open-status based on 9:30 AM - 9:30 PM (Wednesday Closed)
     const checkOpenStatus = () => {
       const now = new Date();
+      const day = now.getDay(); // 0 = Sunday, 3 = Wednesday
       const hrs = now.getHours();
       const mins = now.getMinutes();
       const totalMins = hrs * 60 + mins;
       
-      const openMin = 7 * 60 + 30; // 7:30 AM
+      const openMin = 9 * 60 + 30; // 9:30 AM
       const closeMin = 21 * 60 + 30; // 9:30 PM
       
-      if (totalMins >= openMin && totalMins <= closeMin) {
+      if (day === 3) {
+        setIsOpenNow(false); // Closed on Wednesday
+      } else if (totalMins >= openMin && totalMins <= closeMin) {
         setIsOpenNow(true);
       } else {
         setIsOpenNow(false);
@@ -70,7 +73,7 @@ export const ContactSection: React.FC = () => {
             <span className="font-display text-[10px] uppercase tracking-widest font-semibold">
               {isOpenNow ? 'Deyar Hearth: Open Now' : 'Deyar Hearth: Closed Now'}
             </span>
-            <span className="text-brand-cocoa font-sans text-[10px] pl-1 font-light">• 7:30 AM - 9:30 PM</span>
+            <span className="text-brand-cocoa font-sans text-[10px] pl-1 font-light">• 9:30 AM - 9:30 PM (Wed Closed)</span>
           </div>
         </div>
 
